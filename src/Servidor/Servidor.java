@@ -11,6 +11,13 @@ public class Servidor {
     private String Mensaje;
     private EjecucionComandos ProcesarComando= new EjecucionComandos();
 
+    /**
+     * IniciarServidor:
+     * Inicia el servidor en el puerto especificado, regresa 0 si se pudo iniciar
+     * el servidor y -1 si hubo algún error.
+     * @param puerto    Puerto en el que se iniciará el servidor
+     * @return          0 si se inició correctamente, -1 si hubo un error
+     */
     public int IniciarServidor(int puerto) {
         try {
             serverSocket = new ServerSocket(puerto);
@@ -23,6 +30,13 @@ public class Servidor {
             return -1;
         }
     }
+
+    /**
+     * Servicio:
+     * Espera a que el cliente envíe un mensaje y envía la respuesta al cliente.
+     * Regresa 0 al terminar el servicio y -1 si hubo algún error.
+     * @return 0 si se ejecuta correctamente, -1 si hubo un error.
+     */
     public int Servicio(){
         try{
             while ((Mensaje = in.readLine()) != null) {
@@ -35,6 +49,12 @@ public class Servidor {
         }
     }
 
+    /**
+     * DetenerServidor:
+     * Detiene el servidor y regresa 0 si se pudo detener el servidor y -1 si hubo
+     * algún error.
+     * @return 0 si se detuvo correctamente, -1 si hubo un error.
+     */
     public int DetenerServidor() {
         try {
             serverSocket.close();

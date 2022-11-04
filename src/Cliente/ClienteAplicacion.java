@@ -5,6 +5,12 @@ import java.util.Scanner;
 public class ClienteAplicacion {
 
     private Scanner scanner = new Scanner(System.in);
+
+    /**
+     * mensajes:
+     * Conecta con el servidor, envía los mensajes ingresados por el usuario
+     * y imprime la respuesta del servidor.
+     */
     public void mensajes() {
         Cliente cliente = new Cliente();
         if (cliente.Conectarse("127.0.0.1", 5000) == 0) {
