@@ -25,5 +25,5 @@ public class ClienteAplicacion {
     public static void main(String[] args) {
         ClienteAplicacion cliente = new ClienteAplicacion();
         cliente.mensajes();
-        }
+    }
 }
