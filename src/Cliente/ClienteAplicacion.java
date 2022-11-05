@@ -11,7 +11,7 @@ public class ClienteAplicacion {
      * Conecta con el servidor, envía los mensajes ingresados por el usuario
      * y imprime la respuesta del servidor.
      */
-    public void mensajes() {
+    public int mensajes() {
         Cliente cliente = new Cliente();
         if (cliente.Conectarse("127.0.0.1", 5000) == 0) {
             System.out.println("Conectado al servidor");
@@ -26,6 +26,7 @@ public class ClienteAplicacion {
             }
         } else {
             System.out.println("Error al conectarse al servidor");
+            return -1;
         }
     }
     public static void main(String[] args) {

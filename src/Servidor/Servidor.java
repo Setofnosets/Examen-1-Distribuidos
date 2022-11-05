@@ -40,7 +40,9 @@ public class Servidor {
     public int Servicio(){
         try{
             while ((Mensaje = in.readLine()) != null) {
+                System.out.println("Mensaje recibido: " + Mensaje);
                 out.println(ProcesarComando.EjecutarComando(Mensaje));
+                System.out.println("Respuesta enviada");
             }
             return 0;
         } catch (Exception e) {
